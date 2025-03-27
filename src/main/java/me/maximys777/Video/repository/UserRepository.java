@@ -1,0 +1,13 @@
+package me.maximys777.Video.repository;
+
+import me.maximys777.Video.entity.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    Optional<UserEntity> findByName(String name);
+    Boolean existsByName(String name);
+}
